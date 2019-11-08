@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.sun.expand.App.*;
 import static org.junit.jupiter.api.Assertions.*;
+ 
 
 public class TestApp {
 
@@ -14,8 +15,14 @@ public class TestApp {
         String s="hello";
 
         App app= new App();
-        boolean b= didYouSayHello(s);
-        System.out.println("hello test");
-        assertTrue(b);
+        try {
+            boolean b = didYouSayHello(s);
+
+            assertTrue(b);
+            System.out.println("************* test was a total success ************** ");
+        }catch(Exception e){
+            System.out.println("************* test was a total fail ************** ");
+        }
+
     }
 }
